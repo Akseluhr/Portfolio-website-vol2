@@ -1,0 +1,320 @@
+.App {
+  text-align: center;
+  
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  width:100%;
+  box-sizing: border-box;
+}
+
+.appContainer{
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+.first {
+  background-color: hsl(227, 10%, 50%);
+}
+.second {
+  background-color: hsl(212, 30%, 60%);
+}
+.third {
+  background-color: #d6d1cf;
+}
+.fourth {
+  background-color: 	hsl(200, 28%, 60%);
+}
+
+h1{
+  color: white;
+  font-size: 64px;
+}
+.firstView{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 10%;
+}
+.firstLeft {
+  margin-top: -5%;
+}
+.profilePic{
+ height: 150px;
+ width: auto;
+ border-radius: 50%;
+ border: solid white 1px;
+ float: right;
+
+}
+.secondView{
+  display: flex;
+  justify-content: space-around;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 3%;
+}
+.secondView h1{
+  color: white;
+  font-size: 40px;
+}
+.secondView p{
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  line-height: 1.25;
+  text-align: justify;
+  text-justify: auto;
+  padding-right: 15px;
+}
+
+@media screen and (max-width: 992px) {
+  .secondView p {
+    font-size: 16px;
+  }
+  .secondView h1 {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .secondView p {
+    font-size: 12px;
+  }
+  .secondView h1 {
+    font-size: 24px;
+  }
+  .profilePic {
+    height: 100px;
+    width: auto;
+  }
+}
+.thirdView{
+  display: inline-grid;
+  justify-content: center;
+  align-content: space-between;
+  grid-template-columns: auto auto auto;
+  padding-left: 10%;
+  padding-right: 7%;
+  padding-top: 3%;
+}
+.projectCard {
+  background-color: white;
+  width: 90%;
+  height: auto;
+  padding-bottom: 10px;
+  margin-bottom: 10%;
+  text-align: center;
+  transition: transform .2s; /* Animation */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.projectCard h1 {
+  font-size: 40px;
+}
+.navbar{
+  padding-top: 3%;
+  list-style-type: none;
+  display: flex;
+  justify-content: end;
+  
+}
+ul{
+  margin-top: 0;
+}
+li{
+  margin-right: 5.5%;
+}
+.pitch{
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 5%;
+}
+.fourthView{
+  display: flex;
+  justify-content:space-between;
+  grid-template-columns: auto auto auto;
+  padding-left: 10%;
+  padding-right: 7%;
+}
+.fourthLeft{
+  width: 100%;
+  padding-top: 3%;
+}
+.vl{
+  border-right: 1px solid black;
+  height: 90vh;
+}
+
+hr{
+  border: 0.5px solid white;
+}
+a{
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bolder;
+  text-decoration: underline;
+  text-underline-offset: 0.5em;
+}
+.navbar a:hover{
+  color:black;
+
+}
+
+.footer {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    text-align: center;
+}
+
+.fa{
+  margin: 4px 10px;
+  padding: 7px;
+  border-radius: 15px;
+  width: 40px;
+  opacity: 0.8;
+  text-align: center;
+  text-decoration: none;
+  background: none;
+  border: solid white 1px;
+  color: white;
+}
+
+.fa:hover{
+  background-color:#93abc6;
+  border-color: #93abc6;
+}
+
+
+.btn-type-one{
+  align-items: center;
+  background-color: transparent;
+  border: solid white 1px;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 16px;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+}
+
+.btn-type-one:hover{
+  background-color:#93abc6;
+  border-color: #93abc6;
+}
+
+.btn-type-two{
+  align-items: center;
+  background-color: transparent;
+  border: solid black 1px;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 12px;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 2rem;
+}
+
+.btn-type-two:hover {
+  background-color:#93abc6;
+  border-color: #93abc6;
+}
+
+.btn-type-three{
+  align-items: center;
+  background-color: transparent;
+  border: solid black 1px;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 16px;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+}
+
+.btn-type-three:hover {
+  background-color:#93abc6;
+  border-color: #93abc6;
+}
+.projectCard:hover {
+  transform: scale(1.2);
+}
+
+form{
+  width: 77.5%;
+  margin-top: -2%;
+}
+input[type=text], textarea {
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 0.5px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+label{
+  font-weight: bold;
+  color: white;
+}
+
+.bottom{
+  height: 20vh;
+}
+.details {
+  margin-top: 4%;
+  padding-top: 3%;
+  text-align: justify;
+  text-justify: auto;
+}
+.details li {
+  font-weight: bolder;
+  font-size: 16px;
+  line-height: 1.25;
+  color: white;
+}
+.details h2{
+  text-align: center;
+  color: white;
+}
+.fourthLeft h1 {
+  font-size: 40px;
+  color: white;
+
+}
+.navPin{
+  border-left: 1px solid black;
+  height: 10vh;
+
+}
