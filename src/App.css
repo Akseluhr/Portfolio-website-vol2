@@ -4,6 +4,10 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 body{
   font-family: 'Montserrat', sans-serif;
   width:100%;
@@ -14,6 +18,8 @@ body{
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
+  scroll-behavior: smooth;
+
 }
 section {
   height: 100vh;
@@ -31,6 +37,15 @@ section {
 }
 .fourth {
   background-color: 	hsl(200, 28%, 60%);
+}
+.loadingView{
+  background-color: hsl(227, 10%, 50%);
+  font-family: 'Montserrat', sans-serif;
+  width:100%;
+  height: 100vh;
+  display:flex;
+  justify-content: center; align-items: center;
+  box-sizing: border-box;
 }
 
 h1{
@@ -97,26 +112,34 @@ h1{
   }
 }
 .thirdView{
-  display: inline-grid;
   justify-content: center;
   align-content: space-between;
-  grid-template-columns: auto auto auto;
+  display: grid;
+ 
+  grid-template-columns: repeat(3, 1fr);
+  
+  grid-auto-rows: auto;
+  
+  grid-gap: 1rem;
   padding-left: 10%;
   padding-right: 7%;
   padding-top: 3%;
 }
 .projectCard {
   background-color: white;
-  width: 90%;
+  width: 80%;
   height: auto;
+
   padding-bottom: 10px;
   margin-bottom: 10%;
-  text-align: center;
+  padding-right: 15px;
+  padding-left: 15px;
   transition: transform .2s; /* Animation */
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
 }
-.projectCard h1 {
-  font-size: 40px;
+.projectCard h2 {
+  font-size: 18px;
 }
 .navbar{
   padding-top: 3%;
@@ -213,6 +236,7 @@ a{
   margin: 0;
   min-height: 3rem;
   padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  text-decoration: none;
 }
 
 .btn-type-one:hover{
@@ -238,8 +262,8 @@ a{
 }
 
 .btn-type-two:hover {
-  background-color:#93abc6;
-  border-color: #93abc6;
+  background-color:#bfe390;
+  border-color: #bfe390;
 }
 
 .btn-type-three{
@@ -261,8 +285,8 @@ a{
 }
 
 .btn-type-three:hover {
-  background-color:#93abc6;
-  border-color: #93abc6;
+  background-color:#828991;
+  border-color: #828991;
 }
 .projectCard:hover {
   transform: scale(1.2);
@@ -272,7 +296,7 @@ form{
   width: 77.5%;
   margin-top: -2%;
 }
-input[type=text], textarea {
+input[type=text], input[type=email], textarea {
   font-family: 'Montserrat', sans-serif;
   width: 100%;
   padding: 12px 20px;
@@ -318,3 +342,67 @@ label{
   height: 10vh;
 
 }
+
+.gitHubPic{
+  width:15%;
+  height: auto;
+  float: right;
+  padding-top: 2.5px;
+}
+
+.cardHr{
+  background-color: black;
+  border:none;
+  height: 1px;
+}
+.cardDescription{
+  display:none;
+}
+.cardDescription-show{
+  display:block;
+
+}
+.cardP {
+  font-size: 13px;
+}
+.status{
+  padding-left: 5px;
+}
+/* Loader */
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

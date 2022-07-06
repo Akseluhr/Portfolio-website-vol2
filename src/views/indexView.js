@@ -1,5 +1,6 @@
 import React from 'react'
 import 'animate.css';
+import { Link } from 'react-scroll';
 
 const IndexView = () => {
     return (
@@ -7,18 +8,18 @@ const IndexView = () => {
             <div>
                 <nav>
                     <ul className='navbar'>
-                        <li><a href="default.asp">ABOUT</a></li>
-                        <li><a href="news.asp">PROJECTS</a></li>
-                        <li><a href="contact.asp">CONTACT</a></li>
+                        <li><a href='#about'>ABOUT</a></li>
+                        <li><a href="#projects">PROJECTS</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
                     </ul>
                 </nav>
             </div>
             <div className='firstView'>
-                <div className='firstLeft'>
+                <div className='firstLeft animate__animated animate__slideInUp'>
 
-                    <h1 className='animate__animated animate__slideInUp'> aksel uhr.</h1>
-                    <p className='pitch animate__animated animate__slideInUp'>Social and driven Software Engineering and Data Science MSc student.</p>
-                    <button className='btn-type-one animate__animated animate__slideInUp'>Get to know me!</button>
+                    <h1> aksel uhr.</h1>
+                    <p className='pitch'>Social and driven Software Engineering and Data Science MSc student.</p>
+                    <a className='btn-type-one' href='#about'>Get to know me!</a>
 
                 </div>
             </div>

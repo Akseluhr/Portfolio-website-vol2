@@ -8,7 +8,7 @@ const AboutView = () => {
             <div className='secondView'>
                 <div className='aboutLeft'>
 
-                    <h1 className='animate__animated animate__slideInUp'> Hello, I am Aksel Uhr!                <img className='profilePic' src={aki} alt=''></img>
+                    <h1> Hello, I am Aksel Uhr!                <img className='profilePic' src={aki} alt=''></img>
                     </h1>
                     <hr></hr>
                     <p className="infoP">
@@ -34,7 +34,7 @@ const AboutView = () => {
                     <p className="infoP">
                         Check out some of my projects :)
                     </p>
-                    <button className='btn-type-one'>Projects</button>
+                    <a className='btn-type-one' href='#projects'>Projects</a>
 
                 </div>
             </div>

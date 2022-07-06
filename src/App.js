@@ -3,23 +3,41 @@ import IndexView from './views/indexView';
 import AboutView from './views/aboutView';
 import ProjectView from './views/projectView';
 import ContactView from './views/contactView';
+import LoadingView from './views/loadingView';
+import { useState, useEffect } from 'react';
+import { Link, Element } from 'react-scroll';
 
 function App() {
+  const[isLoading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 1500)
+  }, [])
+
   return (
-    <div className='appContainer'>
-      <section className='first'>
-        <IndexView />
+    <>
+    {isLoading === false ? (
+    <div className='appContainer' id='app'>
+
+      <section className='first' id='/'>
+        <IndexView id=''/>
       </section>
-      <section className='second'>
-        <AboutView />
+
+      <section className='second' id='about'>
+
+          <AboutView />
+
       </section>
-      <section className='third'>
+      <section className='third' id='projects'>
         <ProjectView />
       </section>
-      <section className='fourth'>
+      <section className='fourth' id='contact'>
         <ContactView />
       </section>
-    </div>
+    </div>) : (
+      <LoadingView />
+    )}
+    </>
   );
 }
 
