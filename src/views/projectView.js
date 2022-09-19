@@ -9,16 +9,19 @@ const ProjectView = () => {
         const [err, setErr] = useState('')
     
         useEffect(() => {
-            setIsLoading(true);
-            fetch('https://api.github.com/users/akseluhr/starred')
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                    
-                    setData(data)
-
-                })
-                .catch(err);
+            const fetchData = () => {
+                setIsLoading(true);
+                fetch('https://api.github.com/users/akseluhr/starred')
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        
+                        setData(data)
+    
+                    })
+                    .catch(err);
+            }
+            fetchData()
         }, []);
     
         const setData = ( data 
@@ -33,7 +36,7 @@ const ProjectView = () => {
 
         };
     return (
-        <div>
+        <div className='scrollableDiv'>
 
             <div className='thirdView'>
 
