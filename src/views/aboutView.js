@@ -16,7 +16,7 @@ const AboutView = () => {
                     </p>
                     <p className="infoP">
                         The combination of an intriguing bachelors (information systems) at Uppsala University and a rewarding full stack development internship led to the decision of deepening my knowledge within the areas of my interests.
-                        Therefore, I chose to study for a Master's degree at the Royal Institute of Technology located in Stockholm, Sweden. The program is called software engineering of distributed systems which concerns designing and implementing solutions for various large scale systems. For example, implementing an optimized consensus algorithm (OmniPaxos)in large scale storage systems.
+                        Therefore, I chose to study for a Master's degree at the Royal Institute of Technology located in Stockholm, Sweden. The program is called software engineering of distributed systems which concerns designing and implementing solutions for various large scale systems. For example, implementing an optimized consensus algorithm (OmniPaxos)in a SQLite storage solution (ChiselStore).
 
                     </p>
 

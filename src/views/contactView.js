@@ -74,7 +74,7 @@ const ContactView = () => {
          Message not sent. Try again or contact me on another service: akseluhr8@gmail.com. 
           </div> : ''
         }
-          <h1 className="animate__animated animate__slideInUp"> Contact </h1>
+          <h1> Contact </h1>
           <form ref={form} onSubmit={sendEmail}>
             <label htmlFor="name">Name</label>
             <input

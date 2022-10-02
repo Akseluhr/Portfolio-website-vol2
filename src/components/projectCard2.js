@@ -1,5 +1,4 @@
-import { Button } from 'react-bootstrap'
-import Card from 'react-bootstrap/Card'
+
 import gitHubPic from "../images/githubPic.png"
 import { useState, useEffect } from 'react'
 
@@ -22,7 +21,11 @@ const ProjectCard = (props) => {
                     <h2>{props.title}</h2>
                     <hr className='cardHr'></hr>
                     <p className='cardText'>
+                        bög
                         {props.language === "Language: Jupyter Notebook" ? "Language: Python" : props.language}
+                    </p>
+                    <p className='cardText'>
+                        {props.url}
                     </p>
 
                     <div className={`cardDescription ${isPressed ? 'cardDescription-show' : 'cardDescription'}`}>

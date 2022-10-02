@@ -13,10 +13,10 @@ const ProjectView = () => {
                 setIsLoading(true);
                 fetch('https://api.github.com/users/akseluhr/starred')
                     .then(res => res.json())
-                    .then(data => {
-                        console.log(data)
+                    .then(res => {
+                        console.log(res)
                         
-                        setData(data)
+                        setData(res)
     
                     })
                     .catch(err);
@@ -36,11 +36,10 @@ const ProjectView = () => {
 
         };
     return (
-        <div className='scrollableDiv'>
+        <div className='thirdView'>
+            <div className='scrollableDiv'>
 
-            <div className='thirdView'>
-
-                {projectArray.map( ({name, description, html_url, id, language}) => <ProjectCard key={id}title={name} language={'Language: ' + language} description={description}/>)}
+                {projectArray && projectArray.map( ({name, description, url, id, language}) => <ProjectCard key={id}title={name} language={'Language: ' + language} description={description} url={url}/>)}
                 
             </div>
 

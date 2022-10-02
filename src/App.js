@@ -6,6 +6,7 @@ import ContactView from './views/contactView';
 import LoadingView from './views/loadingView';
 import { useState, useEffect } from 'react';
 import { Link, Element } from 'react-scroll';
+import { loadFull } from "tsparticles";
 
 function App() {
   const[isLoading, setLoading] = useState(true)
@@ -17,6 +18,7 @@ function App() {
   return (
     <>
     {isLoading === false ? (
+      
     <div className='appContainer' id='app'>
 
       <section className='first' id='/'>
