@@ -33,7 +33,7 @@ section {
   background-color: hsl(212, 30%, 60%);
 }
 .third {
-  background-color: #d6d1cf;
+  background-color: hsl(227, 10%, 70%);
 }
 .fourth {
   background-color: 	hsl(200, 28%, 60%);
@@ -94,8 +94,15 @@ h1{
   display: flex;
   justify-content: space-between;
 }
-.cardText{
+.cardLanguage{
   color: black;
+  font-size: 14px;
+  font-weight: bold;
+}
+.cardDescription{
+  font-size: 13px;
+  color: black;
+  font-weight: bolder;
 }
 
 @media screen and (max-width: 992px) {
@@ -134,7 +141,7 @@ h1{
 }
 .scrollableDiv{
   display: grid;
- 
+  margin-bottom: 2%;
   grid-template-columns: repeat(3, 1fr);
   padding-top: 20px;
   overflow: scroll;
@@ -198,7 +205,8 @@ a{
   text-underline-offset: 0.5em;
 }
 .navbar a:hover{
-  color:black;
+  color:#93abc6;
+  
 
 }
 
@@ -257,21 +265,28 @@ a{
 .btn-type-two{
   align-items: center;
   background-color: transparent;
-  border: solid black 1px;
   border-radius: .25rem;
   box-shadow: rgba(0, 0, 0, 0.02);
   box-sizing: border-box;
-  color: black;
+  color: white;
   cursor: pointer;
   display: inline-flex;
-  font-size: 12px;
+  font-size: 13px;
   justify-content: center;
   margin: 0;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-decoration: none;
+  background-color:#93abc6;
+
+
+
+
 }
 
 .btn-type-two:hover {
-  background-color:#bfe390;
-  border-color: #bfe390;
+  background-color: hsl(227, 10%, 70%);
+
 }
 
 .btn-type-three{
@@ -297,7 +312,7 @@ a{
   border-color: #828991;
 }
 .projectCard:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 form{
@@ -360,17 +375,11 @@ label{
 }
 
 .cardHr{
-  background-color: black;
+  background-color: rgba(108, 122, 137, 0.7);
   border:none;
   height: 1px;
 }
-.cardDescription{
-  display:none;
-}
-.cardP {
-  font-size: 13px;
-  color: black;
-}
+
 .status{
   padding-left: 5px;
 }
@@ -444,7 +453,7 @@ label{
 
 /* When moving the mouse over the close button */
 .closebtn:hover {
-  color: black;
+  color: white;
 }
 
 p {
@@ -457,8 +466,12 @@ p {
   display: block;
   align-content: space-evenly;
   background-color: white;
-  padding: 20px;
+  padding: 10px;
   opacity: 0.75;
+  border: solid 1.5px;
+  border-radius: 2px;
+  border-color: rgba(108, 122, 137);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
  
 @media (min-width: 500px) {

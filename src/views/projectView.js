@@ -39,9 +39,10 @@ const ProjectView = () => {
         <div className='thirdView'>
             <div className='scrollableDiv'>
 
-                {projectArray && projectArray.map( ({name, description, url, id, language}) => <ProjectCard key={id}title={name} language={'Language: ' + language} description={description} url={url}/>)}
-                
+                {projectArray && projectArray.map( ({name, description, html_url, id, language}) => <ProjectCard key={id}title={name} language={'Language: ' + language} description={description} url={html_url}/>)}
+
             </div>
+            <a className='btn-type-one' href='#contact'>Contact</a>
 
 
         </div>

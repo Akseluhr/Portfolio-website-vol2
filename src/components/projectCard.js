@@ -19,17 +19,17 @@ const ProjectCard = (props) => {
                     <h2>{props.title}</h2>
                     <hr className='cardHr'></hr>
                     <div className='cardFlex'>
-                        <p className='cardText'>
+                        <p className='cardLanguage'>
             
                             {props.language === "Language: Jupyter Notebook" ? "Language: Python" : props.language}
                         </p>
 
-                        <button className='btn-type-two' onClick={showDesciption}>Repository</button>
+                        <a href={props.url} className='btn-type-two'>Go To Repository</a>
 
                     </div>
 
                     <hr className='cardHr'></hr>
-                    <p className='cardP'>
+                    <p className='cardDescription'>
                         {props.description}
                     </p>
         </div>

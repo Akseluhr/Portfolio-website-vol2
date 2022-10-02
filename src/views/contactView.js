@@ -127,7 +127,10 @@ const ContactView = () => {
               companies
             </li>
             <li>
-              Building a full stack recommendation system in python and react.js
+              Building a fullstack app which shows trending tech stacks based on job opening in T3 stack and postgres.
+            </li>
+            <li>
+              Building a fullstack app which visualizes real-time data using in Kafka, Spark Streaming and React.
             </li>
             <li>Studying full time</li>
             <li>Learning to play the piano</li>

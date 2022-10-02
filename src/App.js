@@ -9,15 +9,11 @@ import { Link, Element } from 'react-scroll';
 import { loadFull } from "tsparticles";
 
 function App() {
-  const[isLoading, setLoading] = useState(true)
 
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 1500)
-  }, [])
 
   return (
-    <>
-    {isLoading === false ? (
+
+
       
     <div className='appContainer' id='app'>
 
@@ -36,10 +32,8 @@ function App() {
       <section className='fourth' id='contact'>
         <ContactView />
       </section>
-    </div>) : (
-      <LoadingView />
-    )}
-    </>
+    </div>
+
   );
 }
 

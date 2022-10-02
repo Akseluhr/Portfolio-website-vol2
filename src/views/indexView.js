@@ -26,13 +26,13 @@ const IndexView = () => {
         },
         "particles": {
 	        "number": {
-	            "value": 160,
+	            "value": 80,
 	            "density": {
 	                "enable": false
 	            }
 	        },
 	        "size": {
-	            "value": 1,
+	            "value": 0.5,
 	            "random": true,
 	            "anim": {
 	                "speed": 4,
@@ -91,7 +91,7 @@ const IndexView = () => {
                 <div className='firstLeft animate__animated animate__slideInUp'>
 
                     <h1> aksel uhr.</h1>
-                    <p className='pitch'>Social and driven Software Engineering and Data Science MSc student.</p>
+                    <p className='pitch'>Positive Data Science MSc. student & part time employed</p>
                     <a className='btn-type-one' href='#about'>Get to know me!</a>
 
                 </div>
