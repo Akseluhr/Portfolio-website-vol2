@@ -105,12 +105,13 @@ h1{
   font-weight: bolder;
 }
 
-@media screen and (max-width: 992px) {
+/* Tablet */
+@media screen and (max-width: 768px) {
   .secondView p {
-    font-size: 16px;
+    font-size: 14px;
   }
   .secondView h1 {
-    font-size: 32px;
+    font-size: 26px;
   }
   .projectCard h2 {
     font-size: 12px;
@@ -120,19 +121,26 @@ h1{
     color:black;
   }
 }
-@media screen and (max-width: 600px) {
+/* Mobile */
+@media screen and (max-width: 480px) {
   .secondView p {
-    font-size: 12px;
+    font-size: 11px;
   }
   .secondView h1 {
-    font-size: 24px;
+    font-size: 20px;
   }
   .profilePic {
     height: 100px;
     width: auto;
   }
+  .thirdView {
+    grid-template-columns: 1fr;
+  }
+  .fourth {
+    display: block;
+  }
   .projectCard h2 {
-    font-size: 12px;
+    font-size: 10px;
   }
   .cardText {
     font-size: 12px;
