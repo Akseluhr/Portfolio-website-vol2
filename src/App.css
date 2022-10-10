@@ -105,60 +105,21 @@ h1{
   font-weight: bolder;
 }
 
-/* Tablet */
-@media screen and (max-width: 768px) {
-  .secondView p {
-    font-size: 14px;
-  }
-  .secondView h1 {
-    font-size: 26px;
-  }
-  .projectCard h2 {
-    font-size: 12px;
-  }
-  .cardText {
-    font-size: 12px;
-    color:black;
-  }
-}
-/* Mobile */
-@media screen and (max-width: 480px) {
-  .secondView p {
-    font-size: 11px;
-  }
-  .secondView h1 {
-    font-size: 20px;
-  }
-  .profilePic {
-    height: 100px;
-    width: auto;
-  }
-  .thirdView {
-    grid-template-columns: 1fr;
-  }
-  .fourth {
-    display: block;
-  }
-  .projectCard h2 {
-    font-size: 10px;
-  }
-  .cardText {
-    font-size: 12px;
-    color: black;
-  }
-}
+
+
+
+
 .scrollableDiv{
   display: grid;
   margin-bottom: 2%;
   grid-template-columns: repeat(3, 1fr);
   padding-top: 20px;
-  overflow: scroll;
+  overflow-y: scroll;
   grid-gap: 1rem;
   height: 85%;
 
 }
 .thirdView{
-
   height: 100%;
   padding-left: 10%;
   padding-right: 7%;
@@ -186,16 +147,14 @@ li{
   padding-bottom: 5%;
 }
 .fourthView{
-  display: flex;
-  justify-content:space-between;
-  grid-template-columns: auto auto auto;
-  padding-left: 10%;
-  padding-right: 7%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 3%;
+
 }
-.fourthLeft{
-  width: 100%;
-  padding-top: 3%;
-}
+
 .vl{
   border-right: 1px solid black;
   height: 90vh;
@@ -232,7 +191,6 @@ a{
   padding: 7px;
   border-radius: 15px;
   width: 40px;
-  opacity: 0.8;
   text-align: center;
   text-decoration: none;
   background: none;
@@ -324,13 +282,16 @@ a{
 }
 
 form{
-  width: 77.5%;
+
   margin-top: -2%;
+
 }
 input[type=text], input[type=email], textarea {
   font-family: 'Montserrat', sans-serif;
   font-size: small ;
   width: 100%;
+  font-weight: 400;
+  color: black;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -348,27 +309,16 @@ label{
 .bottom{
   height: 20vh;
 }
-.details {
-  margin-top: 4%;
-  padding-top: 3%;
-  text-align: justify;
-  text-justify: auto;
-}
+
 .details li {
   font-weight: bolder;
   font-size: 16px;
-  line-height: 1.25;
   color: white;
 }
-.details h2{
-  text-align: center;
-  color: white;
+.fourthView h1{
+  font-size: 30px;
 }
-.fourthLeft h1 {
-  font-size: 40px;
-  color: white;
 
-}
 .navPin{
   border-left: 1px solid black;
   height: 10vh;
@@ -431,29 +381,37 @@ label{
 
 /* The alert message box */
 .alert {
-  width: 70%;
-  padding: 20px;
+  width: 100%;
+  padding-top: 3px;
+  padding-bottom: 10px;
   background-color: rgb(75,181,67,0.5); /* Red */
   color: white;
   margin-bottom: 15px;
   border: 1px solid rgb(75,181,67);
+  font-weight: bolder;
 }
 .alert-failure{
-  width: 70%;
-  padding: 20px;
+  width: 100%;
+  padding-top: 3px;
+  padding-bottom: 10px;
   background-color: rgb(252,16,13,0.5); /* Red */
   color: white;
   margin-bottom: 15px;
   border: 1px solid rgb(252,16,13);
+  font-weight: bolder;
+
 }
+.alert-failure p, .alert p{
+  margin-left: 10px;
+}
+
 
 /* The close button */
 .closebtn {
-  margin-left: 15px;
   color: white;
   font-weight: bold;
   float: right;
-  font-size: 22px;
+  font-size: 36px;
   line-height: 20px;
   cursor: pointer;
   transition: 0.3s;
@@ -475,30 +433,199 @@ p {
   align-content: space-evenly;
   background-color: white;
   padding: 10px;
-  opacity: 0.75;
-  border: solid 1.5px;
   border-radius: 2px;
-  border-color: rgba(108, 122, 137);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
- 
-@media (min-width: 500px) {
-  .projectCard {
-    grid-auto-columns: calc(50% - 10px);
-    grid-column-gap: 20px;
+
+
+/* Tablet */
+
+/* Mobile */
+
+
+/* Large Screen */
+
+@media screen and (min-width: 2560px) {
+  nav a {
+    font-size: 36px;
+  }
+  .firstView h1 {
+    font-size: 64px;
+  }
+  .firstView p {
+    font-size: 42px;
+  }
+  .secondView h1 {
+    font-size: 64px;
+  }
+  .secondView p {
+    font-size: 24px;
+  }
+  .profilePic {
+    height: 300px;
+    width: auto;
+    margin-left: 2px;
+  }
+  .scrollableDiv {
+    display: grid;
+    margin-bottom: 2%;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 100px;
+    grid-gap: 1rem;
+    overflow-y: auto;
+    height: 75%;
+    font-size: 10px;
+  }
+  .projectCard h2 {
+    font-size: 28px;
+  }
+  .projectCard p {
+    font-size: 18px;
+  }
+  .projectCard a {
+    font-size: 18px;
+    padding: 20px
+  }
+  .btn-type-one {
+    padding: 30px;
+    font-size: 25px;
+  }
+  .footer {
+    height: 100px;
+  }
+  .fa {
+    margin: 10px 16px;
+    padding: 7px;
+    border-radius: 15px;
+    width: 50px;
+  }
+  form {
+    height: 100%;
+  }
+  .fourthView {
+    padding-top: 10%;
+  }
+  .fourthView li {
+    font-size: 24px;
+  }
+  
+
+  label {
+    font-size: 24px;
+  }
+  input[type=text], input[type=email], textarea{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px 30px;
+    font-weight: bolder;
+    color: #828991;
+
+  }
+  input{
+    font-weight: bolder;
+
+  }
+
+  .cardText {
+    font-size: 12px;
+    color: black;
   }
 }
- 
-@media (min-width: 700px) {
-  .projectCard {
-    grid-auto-columns: calc(calc(100% / 3) - 20px);
-    grid-column-gap: 30px;
+
+/* Tablet Screen */
+@media screen and (max-width: 768px) {
+  .firstView h1{
+    margin-top: 30%;
+  }
+  .secondView p {
+    font-size: 20px;
+  }
+  .projectCard h2{
+    font-size: 16px;
+  }
+  .projectCard a{
+    font-size: 12px;
+    text-align: center;
+  }
+  .projectCard p {
+    font-size: 14px;
+  }
+  .scrollableDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fourthView {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+  }
+  form{
+    width: 100%;
+  }
+  .fourthView h1 {
+    font-size: 24px;
   }
 }
- 
-@media (min-width: 1100px) {
-  .projectCard {
-    grid-auto-columns: calc(25% - 30px);
-    grid-column-gap: 40px;
+
+/* Tablet Screen */
+@media screen and (max-width: 411px) {
+  .firstView h1{
+    margin-top: 40%;
+  }
+  .secondView h1 {
+    font-size: 24px;
+  }
+  .secondView p {
+    font-size: 12.5px;
+  }
+  .profilePic {
+    width: 100px;
+    height: auto;
+    margin-left: 4px;
+
+  }
+  .projectCard h2{
+    font-size: 16px;
+  }
+  .projectCard a{
+    font-size: 12px;
+    text-align: center;
+  }
+  .projectCard p {
+    font-size: 14px;
+  }
+  .scrollableDiv {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    height: 80%;
+  }
+  .fourthView {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+  }
+  form{
+    width: 100%;
+  }
+  .fourthView h1 {
+    font-size: 15px;
+  }
+  .fourthView li {
+    font-size: 11px;
+  }
+  label {
+    font-size: 12px;
+  }
+  input[type=text], input[type=email]{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 10px 10px;
+    font-weight: 400;
+    color: #828991;
+
+  }
+  textarea {
+    padding: 10px 10px;
+    height: 100px;
   }
 }

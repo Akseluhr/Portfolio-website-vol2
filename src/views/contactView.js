@@ -62,54 +62,9 @@ const ContactView = () => {
   return (
     <div>
       <div className="fourthView">
-        <div className="fourthLeft">
-        {success === true ? 
-        <div class="alert-success">
-          <span class="closebtn" onClick={() => setSuccess(false)}>&times;</span>
-         Message Sent! Talk to you soon. <i style="font-size:24px" class="fa">&#xf087;</i>
-          </div> 
-          : err === true ?
-          <div class="alert-failure">
-          <span class="closebtn" onClick={() => setErr(false)}>&times;</span>
-         Message not sent. Try again or contact me on another service: akseluhr8@gmail.com. 
-          </div> : ''
-        }
-          <h1> Contact </h1>
-          <form ref={form} onSubmit={sendEmail}>
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="from_name"
-              placeholder="Your name.."
-            />
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="from_email"
-              placeholder="Your Email.."
-            />
-            <label htmlFor="msg">Message</label>
-            <textarea
-              rows="10"
-              id="msg"
-              name="message"
-              placeholder="Your message.."
-            ></textarea>
-            {isLoading === true ? 
-            <p>Sending...</p> :  
-            <button type="submit" className="btn-type-one" disabled={isLoading}>
-            Send
-            </button>
-            }
 
-            {/* disabled={isLoading} */}
-          </form>
-        </div>
-
-        <div className="details">
-          <h2>Current Aspires</h2>
+      <div className="details">
+          <h1>Current Aspires</h1>
           <ul>
             <li>
               Find a Master Thesis topic within ML/Data Science for a company
@@ -120,7 +75,7 @@ const ContactView = () => {
             </li>
             <li>Keep enjoying life :)</li>
           </ul>
-          <h2>Current Projects</h2>
+          <h1>Current Projects</h1>
           <ul>
             <li>
               Project leader for THS Armada, managing other employees and
@@ -135,7 +90,7 @@ const ContactView = () => {
             <li>Studying full time</li>
             <li>Learning to play the piano</li>
           </ul>
-          <h2>Current Status</h2>
+          <h1>Current Status</h1>
           <ul>
             <li>
               Stockholm:
@@ -155,6 +110,51 @@ const ContactView = () => {
               )}
             </li>
           </ul>
+        </div>
+        <div className="fourthLeft">
+        {success === true ? 
+        <div class="alert-success">
+          <span class="closebtn" onClick={() => setSuccess(false)}>&times;</span>
+        <p>Message Sent! Talk to you soon.</p> <i style="font-size:36px" class="fa">&#xf087;</i>
+          </div> 
+          : err === true ?
+          <div class="alert-failure">
+          <span class="closebtn" onClick={() => setErr(false)}>&times;</span>
+         <p>Message not sent. Try again or contact me on another service: akseluhr8@gmail.com. </p>
+          </div> : ''
+        }
+          <h1> Contact </h1>
+          <form ref={form} onSubmit={sendEmail}>
+            <label htmlFor="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="from_name"
+              placeholder="John Doe"
+            />
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="from_email"
+              placeholder="Johndoe@acme.com"
+            />
+            <label htmlFor="msg">Message:</label>
+            <textarea
+              rows="10"
+              id="msg"
+              name="message"
+              placeholder="Type anything!"
+            ></textarea>
+            {isLoading === true ? 
+            <p>Sending...</p> :  
+            <button type="submit" className="btn-type-one" disabled={isLoading}>
+            Send
+            </button>
+            }
+
+            {/* disabled={isLoading} */}
+          </form>
         </div>
       </div>
     </div>
