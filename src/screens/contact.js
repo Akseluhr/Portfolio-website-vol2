@@ -1,42 +1,35 @@
 import React from "react";
 import "animate.css";
 import { useEffect, useState, useRef } from "react";
-import {
-  SERVICE_ID,
-  TEMPLATE_ID,
-  API_KEY,
-} from "/Users/akseluhr/Documents/GitHub/Portfolio-website-vol2/src/apiConfig.js";
 import emailjs from "@emailjs/browser";
 
-const ContactView = () => {
-  const [celsius, setCelsius] = useState("");
-  const [rain, setRain] = useState("");
+const API_KEY = process.env.API_KEY;
+const TEMPLATE_ID = process.env.TEMPLATE_ID;
+const SERVICE_ID = process.env.SERVICE_ID;
+
+const ContactScreen = () => {
   const [time, setTime] = useState("");
   const [sky, setSymbol] = useState("");
   const [isLoading, setLoading] = useState(false);
-  const [err, setErr] = useState(false);
-  const [success, setSuccess] = useState(false)
+  const [err, setError] = useState('');
+  const [success, setSuccess] = useState(false);
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setLoading(true)
+    setLoading(true);
     console.log(form.current);
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, API_KEY).then(
       (result) => {
-        console.log("rest text", result.text);
-        setLoading(false)
-        setErr(true)
-
-        //setSuccess(true)
+        setLoading(false);
+        setError('');
       },
       (error) => {
-        console.log(error.text);
-        setLoading(false)
-        setErr(true)
+        setLoading(false);
+        setError("Could not send Email. Try again or contact me at akseluhr8@gmail.com");
       }
     );
-    e.target.reset()
+    e.target.reset();
   };
 
   useEffect(() => {
@@ -49,21 +42,16 @@ const ContactView = () => {
         const weatherData = data.timeSeries[0].parameters;
         var today = new Date();
         var currentTime = today.getHours();
-        //Celsius
-        setCelsius(weatherData[10].values[0]);
-
-        setRain(weatherData[2].values[0]);
         setSymbol(weatherData[18].values[0]);
         setTime(currentTime);
       })
       .catch(err);
-  }, []);
+  });
 
   return (
     <div>
       <div className="fourthView">
-
-      <div className="details">
+        <div className="details">
           <h1>Current Aspires</h1>
           <ul>
             <li>
@@ -82,10 +70,12 @@ const ContactView = () => {
               companies
             </li>
             <li>
-              Building a fullstack app which shows trending tech stacks based on job opening in T3 stack and postgres.
+              Building a fullstack app which shows trending tech stacks based on
+              job opening in T3 stack and postgres.
             </li>
             <li>
-              Building a fullstack app which visualizes real-time data using in Kafka, Spark Streaming and React.
+              Building a fullstack app which visualizes real-time data using in
+              Kafka, Spark Streaming and React.
             </li>
             <li>Studying full time</li>
             <li>Learning to play the piano</li>
@@ -112,19 +102,33 @@ const ContactView = () => {
           </ul>
         </div>
         <div className="fourthLeft">
-        {success === true ? 
-        <div class="alert-success">
-          <span class="closebtn" onClick={() => setSuccess(false)}>&times;</span>
-        <p>Message Sent! Talk to you soon.</p> <i style="font-size:36px" class="fa">&#xf087;</i>
-          </div> 
-          : err === true ?
-          <div class="alert-failure">
-          <span class="closebtn" onClick={() => setErr(false)}>&times;</span>
-         <p>Message not sent. Try again or contact me on another service: akseluhr8@gmail.com. </p>
-          </div> : ''
-        }
+          {success === true ? (
+            <div class="alert-success">
+              <span class="closebtn" onClick={() => setSuccess(false)}>
+                &times;
+              </span>
+              <p>Message Sent! Talk to you soon.</p>{" "}
+              <i style={{ fontSize:`36px` }} className="fa">
+                &#xf087;
+              </i>
+            </div>
+          ) : err !== '' ? (
+            <div class="alert-failure">
+              <span class="closebtn" onClick={() => setError('')}>
+                &times;
+              </span>
+              <p>
+                Message not sent. Try again or contact me on another service:
+                akseluhr8@gmail.com.{" "}
+              </p>
+            </div>
+          ) : (
+            ""
+          )}
           <h1> Contact </h1>
           <form ref={form} onSubmit={sendEmail}>
+            <div className="flexInput">
+              <div>
             <label htmlFor="name">Name:</label>
             <input
               type="text"
@@ -132,6 +136,8 @@ const ContactView = () => {
               name="from_name"
               placeholder="John Doe"
             />
+            </div>
+            <div>
             <label htmlFor="email">Email:</label>
             <input
               type="email"
@@ -139,6 +145,8 @@ const ContactView = () => {
               name="from_email"
               placeholder="Johndoe@acme.com"
             />
+            </div>
+            </div>
             <label htmlFor="msg">Message:</label>
             <textarea
               rows="10"
@@ -146,12 +154,17 @@ const ContactView = () => {
               name="message"
               placeholder="Type anything!"
             ></textarea>
-            {isLoading === true ? 
-            <p>Sending...</p> :  
-            <button type="submit" className="btn-type-one" disabled={isLoading}>
-            Send
-            </button>
-            }
+            {isLoading === true ? (
+              <p>Sending...</p>
+            ) : (
+              <button
+                type="submit"
+                className="btn-type-one"
+                disabled={isLoading}
+              >
+                Send
+              </button>
+            )}
 
             {/* disabled={isLoading} */}
           </form>
@@ -161,4 +174,4 @@ const ContactView = () => {
   );
 };
 
-export default ContactView;
+export default ContactScreen;

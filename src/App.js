@@ -1,39 +1,26 @@
-import './App.css';
-import IndexView from './views/indexView';
-import AboutView from './views/aboutView';
-import ProjectView from './views/projectView';
-import ContactView from './views/contactView';
-import LoadingView from './views/loadingView';
-import { useState, useEffect } from 'react';
-import { Link, Element } from 'react-scroll';
-import { loadFull } from "tsparticles";
+import "./App.css";
+import IndexScreen from "./screens/home";
+import AboutScreen from "./screens/about";
+import ProjectScreen from "./screens/projects";
+import ContactScreen from "./screens/contact";
 
 function App() {
-
-
   return (
-
-
-      
-    <div className='appContainer' id='app'>
-
-      <section className='first' id='/'>
-        <IndexView id=''/>
+    <div className="appContainer" id="app">
+      <section className="first" id="/">
+        <IndexScreen id="" />
       </section>
 
-      <section className='second' id='about'>
-
-          <AboutView />
-
+      <section className="second" id="about">
+        <AboutScreen />
       </section>
-      <section className='third' id='projects'>
-        <ProjectView />
+      <section className="third" id="projects">
+        <ProjectScreen />
       </section>
-      <section className='fourth' id='contact'>
-        <ContactView />
+      <section className="fourth" id="contact">
+        <ContactScreen />
       </section>
     </div>
-
   );
 }
 
