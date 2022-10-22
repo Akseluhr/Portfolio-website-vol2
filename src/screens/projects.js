@@ -5,19 +5,16 @@ import { useState, useEffect } from "react";
 
 const ProjectScreen = () => {
   const [projectArray, setProjects] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [err, setError] = useState("");
 
   useEffect(() => {
     const fetchData = () => {
-      setIsLoading(true);
       fetch("https://api.github.com/users/akseluhr/starred")
         .then((res) => res.json())
         .then((res) => {
           setData(res);
         })
         .catch((error => {
-            setError("Unable to get projects. Try again later")
+          return error
         }));
     };
     fetchData();
@@ -25,7 +22,6 @@ const ProjectScreen = () => {
 
   const setData = (data) => {
     setProjects(data);
-    setIsLoading(false);
   };
   return (
     <div className="thirdView">

@@ -3,9 +3,11 @@ import "animate.css";
 import { useEffect, useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
-const API_KEY = process.env.API_KEY;
-const TEMPLATE_ID = process.env.TEMPLATE_ID;
-const SERVICE_ID = process.env.SERVICE_ID;
+require('dotenv').config()
+
+const API_KEY = process.env.REACT_APP_API_KEY;
+const TEMPLATE_ID = process.env.REACT_APPTEMPLATE_ID;
+const SERVICE_ID = process.env.REACT_APPSERVICE_ID;
 
 const ContactScreen = () => {
   const [time, setTime] = useState("");
@@ -18,7 +20,6 @@ const ContactScreen = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     setLoading(true);
-    console.log(form.current);
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, API_KEY).then(
       (result) => {
         setLoading(false);

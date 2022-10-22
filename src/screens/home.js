@@ -121,7 +121,12 @@ const HomeScreen = () => {
         >
           {" "}
         </a>
-        <a href="https://github.com/Akseluhr" className="fa fa-github"></a>
+        <a 
+          href="https://github.com/Akseluhr" 
+          className="fa fa-github" 
+        >
+          {" "}
+        </a>
       </footer>
       <div className="navPin"></div>
     </div>
